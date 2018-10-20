@@ -6,8 +6,8 @@ arcpy.env.overwriteOutput = True
 
 
 #Define inputs
-byggnader = 'D:/projekt_byggarea/data/bygg_area.gdb/by_1286'
-fastigheter = 'D:/projekt_byggarea/data/bygg_area.gdb/ay_1286'
+byggnader = '/by_1286'
+fastigheter = '/ay_1286'
 
 arcpy.env.outputCoordinateSystem = arcpy.Describe(fastigheter).spatialReference
 
