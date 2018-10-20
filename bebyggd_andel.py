@@ -60,7 +60,7 @@ with arcpy.da.UpdateCursor(fastigheter, (fast_objID,fast_area,Bebyggd)) as curso
         byggnad = row[2]
 
         #For restart
-        if fastID in range(0,10093):
+        if fastID in range(0,12373):
             continue
 
         #Skip properties with no buildings
