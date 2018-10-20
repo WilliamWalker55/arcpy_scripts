@@ -6,8 +6,8 @@ arcpy.env.overwriteOutput = True
 
 
 #Define inputs
-byggnader = 'D:/projekt_byggarea/data/bygg_area.gdb/by_1286'
-fastigheter = 'D:/projekt_byggarea/data/bygg_area.gdb/ay_1286'
+byggnader = '/by_1286'
+fastigheter = '/ay_1286'
 
 arcpy.env.outputCoordinateSystem = arcpy.Describe(fastigheter).spatialReference
 
@@ -27,7 +27,7 @@ length_unit = ""
 area_unit = "SQUARE_METERS"
 coordinate_system = ""
 noll = 0
-"""
+
 #Add attribute to property feature class
 arcpy.AddField_management(fastigheter, Bebyggd, "FLOAT")
 
@@ -50,7 +50,7 @@ arcpy.CalculateField_management("fast_Layer",Bebyggd,int(noll))
 #Delete feature layers
 arcpy.Delete_management("byggnad_Layer")
 arcpy.Delete_management("fast_Layer")
-"""
+
 #Iterate through properties
 with arcpy.da.UpdateCursor(fastigheter, (fast_objID,fast_area,Bebyggd)) as cursor:
     
